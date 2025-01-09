@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "UWaterloo to Gym",
+    "version": "1.0",
+    "description": "Scrape UWaterloo gym schedules and generate Google Calendar events.",
+    "permissions": ["clipboardRead", "activeTab", "scripting"],
+    "host_permissions": ["https://*/*"],
+    "action": {
+      "default_popup": "popup/build/index.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
